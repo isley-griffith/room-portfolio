@@ -10,14 +10,14 @@ const filled = document.querySelector(".filled");
 let flag = true;
 let flagWrapper = true;
 
-function updateProgressBar() {
-  filled.style.width = `${
-    (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100
-  }%`;
-  requestAnimationFrame(updateProgressBar);
-}
+// function updateProgressBar() {
+//   filled.style.width = `${
+//     (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100
+//   }%`;
+//   requestAnimationFrame(updateProgressBar);
+// }
 
-updateProgressBar();
+// updateProgressBar();
 
 // const zoomIn = () => {
 //   anime({
