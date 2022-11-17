@@ -95,6 +95,11 @@ html, body {
   /* margin-left: 40px; */
  }
 
+ .contact-footer {
+  margin-top: 30%;
+  margin-bottom: 0;
+ }
+
 /* Page Itself -------------------------------- */
 
 .page {
@@ -123,7 +128,7 @@ html, body {
 
 /* Interests */
 .interest {
-  font-size: 24px;
+  font-size: 16px;
   line-height: 1.8;
   font-weight: 200;
   color: var(--color-text);
@@ -147,7 +152,7 @@ html, body {
   margin: 0;
   background-color: var(--primary-color);
   /* From https://css.glass */
-  background: #e9e8e68d;
+  background: #e9e8e6d1;
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
@@ -181,7 +186,7 @@ html, body {
 }
 
 .section-heading {
-  font-size: 18px;
+  font-size: 24px;
   line-height: 1.8;
   margin-top: 48px;
   font-weight: 500;
@@ -214,23 +219,24 @@ html, body {
 }
 
 .section-company-position {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.8;
-  font-weight: 200;
+  font-weight: 400;
   color: var(--color-text);
   margin-left: 40px;
 }
 
 .section-date {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.8;
-  font-weight: 200;
+  font-weight: 300;
   color: var(--color-text);
   margin-left: 40px;
 }
 
 .section-work-description {
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 200;
   line-height: 1.8;
   color: var(--color-text);
   margin-left: 40px;

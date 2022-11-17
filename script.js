@@ -13,6 +13,7 @@ let flagWrapper = true;
 // Wrap every letter in a span
 var textWrapper = document.querySelector(".ml11 .letters");
 textWrapper.innerHTML = textWrapper.textContent.replace(
+  /([^\x00-\x80]|\w)/g,
   "<span class='letter'>$&</span>"
 );
 
@@ -30,11 +31,11 @@ anime
     translateX: [
       0,
       document.querySelector(".ml11 .letters").getBoundingClientRect().width *
-        2.65,
+        2.7,
     ],
     easing: "easeOutExpo",
     duration: 600,
-    delay: 50,
+    delay: 0,
   })
   .add({
     targets: ".ml11 .letter",
@@ -42,12 +43,12 @@ anime
     // easing: "easeOutExpo",
     duration: 600,
     offset: "-=775",
-    delay: (el, i) => 34 * (i + 1),
+    delay: (el, i) => 20 * (i + 1),
   })
   .add({
     targets: ".ml11",
     opacity: 0,
     duration: Infinity,
-    easing: "easeOutExpo",
-    delay: 1000,
+    // easing: "easeOutExpo",
+    delay: 0,
   });
