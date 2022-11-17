@@ -10,97 +10,44 @@ const filled = document.querySelector(".filled");
 let flag = true;
 let flagWrapper = true;
 
-// function updateProgressBar() {
-//   filled.style.width = `${
-//     (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100
-//   }%`;
-//   requestAnimationFrame(updateProgressBar);
-// }
+// Wrap every letter in a span
+var textWrapper = document.querySelector(".ml11 .letters");
+textWrapper.innerHTML = textWrapper.textContent.replace(
+  "<span class='letter'>$&</span>"
+);
 
-// updateProgressBar();
-
-// const zoomIn = () => {
-//   anime({
-//     targets: room,
-//     scale: {
-//       value: 1.5,
-//     },
-//     translateY: 100,
-//   });
-// };
-
-// button.addEventListener("mousedown", zoomIn);
-
-// secondSection.addEventListener("mousedown", () => {
-//   if (flagWrapper) {
-//     fullScreenSecondSection();
-//     flagWrapper = !flagWrapper;
-//   } else {
-//     fullScreenSecondSectionCancel();
-//     flagWrapper = !flagWrapper;
-//   }
-// });
-
-// const satelliteMouseoverAnimation = () => {
-//   anime({
-//     targets: satellite,
-//     scale: {
-//       value: 1.5,
-//     },
-//   });Í
-// };
-
-// const satelliteMouseoverAnimationCancel = () => {
-//   anime({
-//     targets: satellite,
-//     scale: {
-//       value: 1,
-//     },
-//   });
-// };
-
-// const satelliteWrapperExpansion = () => {
-//   anime({
-//     targets: satelliteWrapper,
-//     scale: {
-//       value: 1.5,
-//     },
-//     translateX: -800,
-//   });
-// };
-
-// const satelliteWrapperExpansionCancel = () => {
-//   anime({
-//     targets: satelliteWrapper,
-//     scale: {
-//       value: 1,
-//     },
-//     translateX: 0,
-//   });
-// };
-
-// const fullScreenSecondSection = () => {
-//   anime({
-//     targets: secondSection,
-//     width: "100%",
-//     // translateX: -900,
-//   });
-// };
-
-// const fullScreenSecondSectionCancel = () => {
-//   anime({
-//     targets: secondSection,
-//     width: "50%",
-//     translateX: 0,
-//   });
-// };
-
-// satellite.addEventListener("mouseover", () => {
-//   if (flag) {
-//     satelliteMouseoverAnimation();
-//     flag = !flag;
-//   } else {
-//     satelliteMouseoverAnimationCancel();
-//     flag = !flag;
-//   }
-// });
+anime
+  .timeline({ loop: false })
+  .add({
+    targets: ".ml11 .line",
+    scaleY: [0, 1],
+    opacity: [0.5, 1],
+    // easing: "easeOutExpo",
+    duration: 600,
+  })
+  .add({
+    targets: ".ml11 .line",
+    translateX: [
+      0,
+      document.querySelector(".ml11 .letters").getBoundingClientRect().width *
+        2.65,
+    ],
+    easing: "easeOutExpo",
+    duration: 600,
+    delay: 50,
+  })
+  .add({
+    targets: ".ml11 .letter",
+    opacity: [0, 1],
+    // easing: "easeOutExpo",
+    duration: 600,
+    offset: "-=775",
+    delay: (el, i) => 34 * (i + 1),
+  })
+  .add({
+    targets: ".ml11",
+    opacity: 0,
+    duration: Infinity,
+    easing: "easeOutExpo",
+    delay: 1000,
+  });
